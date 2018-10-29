@@ -8,6 +8,12 @@ import org.springframework.stereotype.Service;
 import com.github.imtiazrahi.junit5mock.bean.Address;
 import com.github.imtiazrahi.junit5mock.repo.AddressRepository;
 
+/**
+ * Default implementation of {@link AddressService} interface.
+ * 
+ * @author Imtiaz Rahi
+ * @since 2018-10-28
+ */
 @Service
 public class AddressServiceImpl implements AddressService {
 	@Autowired private AddressRepository repo;
@@ -22,4 +28,8 @@ public class AddressServiceImpl implements AddressService {
 		return repo.findByPostcodeAndBuilding(postcode, building).orElseGet(null);
 	}
 
+	@Override
+	public int getSum(int a, int b) {
+		return a + b;
+	}
 }
